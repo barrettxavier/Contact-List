@@ -15,7 +15,8 @@ const ContactList = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       const response = await fetch ("https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users")
-      const data = response.json();
+      const data = await response.json();
+      console.log(data);
       setContacts(data);
     }
     fetchContacts();
