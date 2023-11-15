@@ -1,13 +1,15 @@
-const ContactRow = () => {
-
+const ContactRow = ({ setSelectedContactId, contact }) => {
   return (
-    <tr>
-      <td>{ContactRow.name}</td>
-      <td>{ContactRow.email}</td>
-      <td>{ContactRow.phone}</td>
+    <tr
+      onClick={() => {
+        setSelectedContactId(contact.id);
+      }}
+    >
+      <td>{contact.name}</td>
+      <td>{contact.email}</td>
+      <td>{contact.phone}</td>
     </tr>
-  )
+  );
+};
 
-}
-
-export default ContactRow
+export default ContactRow;
